@@ -17,15 +17,6 @@ def concat_file_location(file_name):
     return file_location + file_name
 
 
-def shape(lst):
-    length = len(lst)
-    shp = tuple(shape(sub) if isinstance(sub, list) else 0 for sub in lst)
-    if any(x != 0 for x in shp):
-        return length, shp
-    else:
-        return length
-
-
 def check(item):
     res = [(type(item), len(item))]
     for i in item:
@@ -64,7 +55,7 @@ modifiers = abilities["modifiers"]
 # For a given index and list within the series "modifiers"
 for idx, lst in enumerate(modifiers):
     # If the row contains a list that isn't empty
-    if isinstance(lst, list) and len(lst)>0:
+    if isinstance(lst, list) and len(lst) > 0:
         # Look through each dictionary in that list
         for d in lst:
             if "description" in d and "poison" in d["description"].lower() and False:
